@@ -1,5 +1,8 @@
 #!/bin/bash
 set -e
 
-# Stop the running container (if any)
-echo "Hi"
+# Stop all running containers
+sudo docker stop $(sudo docker ps -q)
+
+# Remove all stopped containers
+sudo docker rm $(sudo docker ps -a -q)
